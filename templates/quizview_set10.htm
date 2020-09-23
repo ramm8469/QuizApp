@@ -1,0 +1,229 @@
+{% extends 'base_internal.htm' %}
+{% load crispy_forms_tags %}
+{% block title %} Quiz {% endblock title %}
+
+{% block body %}
+
+{% if  question_list_set10 != None %}
+
+ <!-- Quiz Details -->
+ <br>
+ <div class="container">
+   <div class="card-columns">
+      <div class="card bg-light">
+        <div class="card-body text-center">
+          <p class="card-text font-weight-bolder">Quiz Batch : {{question_set10_instance.name}}</p>
+        </div>
+      </div>
+      <div class="card bg-light">
+        <div class="card-body text-center">
+          <p class="card-text font-weight-bolder">Created By : {{question_set10_instance.author}}</p>
+        </div>
+      </div>
+      <div class="card bg-light">
+        <div class="card-body text-center">
+          <p class="card-text font-weight-bolder">Created on : {{question_set10_instance.created_on}}</p>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="card bg-light">
+        <div class="card-body text-center">
+          <p class="card-text font-weight-bolder">Quiz Name : {{question_list_set10.name}}</p>
+        </div>
+      </div>
+  </div>
+
+ <!-- Quiz Form -->
+ <div class="conatiner  ">
+  {% url 'QuizInstance'  set_type=set_type id=each.id as the_url %}
+    <form method="post" action="{{the_url}}" class=" mx-auto" style="width: 50%">
+        {% csrf_token %}
+       
+        
+       
+             <!-- Question-template -->
+
+             <!-- question-1 -->
+            <div class="mx-auto  m-5 pb-5 shadow-lg p-4 mb-4 bg-white">
+                <h2>{{question_list_set10.question_1.question}}</h2>
+                <div class="form-group">
+                    <label for="sel1">Select One:</label>
+                    <select class="form-control" id="sel1" name="question_1">
+                      <option>{{question_list_set10.question_1.option_1}}</option>
+                      <option>{{question_list_set10.question_1.option_2}}</option>
+                      <option>{{question_list_set10.question_1.option_3}}</option>
+                      <option>{{question_list_set10.question_1.option_4}}</option>
+                    </select>
+                    <br>
+                </div>
+    
+            </div> 
+
+            <!-- question-2 -->
+            <div class="mx-auto  m-5 pb-5 shadow-lg p-4 mb-4 bg-white">
+                <h2>{{question_list_set10.question_2.question}}</h2>
+                <div class="form-group">
+                    <label for="sel1">Select One:</label>
+                    <select class="form-control" id="sel1" name="question_2">
+                      <option>{{question_list_set10.question_2.option_1}}</option>
+                      <option>{{question_list_set10.question_2.option_2}}</option>
+                      <option>{{question_list_set10.question_2.option_3}}</option>
+                      <option>{{question_list_set10.question_2.option_4}}</option>
+                    </select>
+                    <br>
+                </div>
+    
+            </div> 
+
+
+            <!-- question-3 -->
+            <div class="mx-auto  m-5 pb-5 shadow-lg p-4 mb-4 bg-white">
+                <h2>{{question_list_set10.question_3.question}}</h2>
+                <div class="form-group">
+                    <label for="sel1">Select One:</label>
+                    <select class="form-control" id="sel1" name="question_3">
+                      <option>{{question_list_set10.question_3.option_1}}</option>
+                      <option>{{question_list_set10.question_3.option_2}}</option>
+                      <option>{{question_list_set10.question_3.option_3}}</option>
+                      <option>{{question_list_set10.question_3.option_4}}</option>
+                    </select>
+                    <br>
+                </div>
+    
+            </div> 
+
+            <!-- question-4 -->
+            <div class="mx-auto  m-5 pb-5 shadow-lg p-4 mb-4 bg-white">
+                <h2>{{question_list_set10.question_4.question}}</h2>
+                <div class="form-group">
+                    <label for="sel1">Select One:</label>
+                    <select class="form-control" id="sel1" name="question_4">
+                      <option>{{question_list_set10.question_4.option_1}}</option>
+                      <option>{{question_list_set10.question_4.option_2}}</option>
+                      <option>{{question_list_set10.question_4.option_3}}</option>
+                      <option>{{question_list_set10.question_4.option_4}}</option>
+                    </select>
+                    <br>
+                </div>
+    
+            </div> 
+
+            <!-- question-5 -->
+
+            <div class="mx-auto  m-5 pb-5 shadow-lg p-4 mb-4 bg-white">
+                <h2>{{question_list_set10.question_5.question}}</h2>
+                <div class="form-group">
+                    <label for="sel1">Select One:</label>
+                    <select class="form-control" id="sel1" name="question_5">
+                      <option>{{question_list_set10.question_5.option_1}}</option>
+                      <option>{{question_list_set10.question_5.option_2}}</option>
+                      <option>{{question_list_set10.question_5.option_3}}</option>
+                      <option>{{question_list_set10.question_5.option_4}}</option>
+                    </select>
+                    <br>
+                </div>
+    
+            </div> 
+
+                <!-- question-6 -->
+            <div class="mx-auto  m-5 pb-5 shadow-lg p-4 mb-4 bg-white">
+                <h2>{{question_list_set10.question_6.question}}</h2>
+                <div class="form-group">
+                    <label for="sel1">Select One:</label>
+                    <select class="form-control" id="sel1" name="question_6">
+                      <option>{{question_list_set10.question_6.option_1}}</option>
+                      <option>{{question_list_set10.question_6.option_2}}</option>
+                      <option>{{question_list_set10.question_6.option_3}}</option>
+                      <option>{{question_list_set10.question_6.option_4}}</option>
+                    </select>
+                    <br>
+                </div>
+    
+            </div> 
+
+                <!-- question-7 -->
+            <div class="mx-auto  m-5 pb-5 shadow-lg p-4 mb-4 bg-white">
+                <h2>{{question_list_set10.question_7.question}}</h2>
+                <div class="form-group">
+                    <label for="sel1">Select One:</label>
+                    <select class="form-control" id="sel1" name="question_7">
+                      <option>{{question_list_set10.question_7.option_1}}</option>
+                      <option>{{question_list_set10.question_7.option_2}}</option>
+                      <option>{{question_list_set10.question_7.option_3}}</option>
+                      <option>{{question_list_set10.question_7.option_4}}</option>
+                    </select>
+                    <br>
+                </div>
+    
+            </div> 
+
+            <!-- question-8 -->
+            <div class="mx-auto  m-5 pb-5 shadow-lg p-4 mb-4 bg-white">
+                <h2>{{question_list_set10.question_8.question}}</h2>
+                <div class="form-group">
+                    <label for="sel1">Select One:</label>
+                    <select class="form-control" id="sel1" name="question_8">
+                      <option>{{question_list_set10.question_8.option_1}}</option>
+                      <option>{{question_list_set10.question_8.option_2}}</option>
+                      <option>{{question_list_set10.question_8.option_3}}</option>
+                      <option>{{question_list_set10.question_8.option_4}}</option>
+                    </select>
+                    <br>
+                </div>
+    
+            </div> 
+
+                <!-- question-9 -->
+            <div class="mx-auto  m-5 pb-5 shadow-lg p-4 mb-4 bg-white">
+                <h2>{{question_list_set10.question_9.question}}</h2>
+                <div class="form-group">
+                    <label for="sel1">Select One:</label>
+                    <select class="form-control" id="sel1" name="question_9">
+                      <option>{{question_list_set10.question_9.option_1}}</option>
+                      <option>{{question_list_set10.question_9.option_2}}</option>
+                      <option>{{question_list_set10.question_9.option_3}}</option>
+                      <option>{{question_list_set10.question_9.option_4}}</option>
+                    </select>
+                    <br>
+                </div>
+    
+            </div> 
+
+            <!-- question-10 -->
+            <div class="mx-auto  m-5 pb-5 shadow-lg p-4 mb-4 bg-white">
+                <h2>{{question_list_set10.question_10.question}}</h2>
+                <div class="form-group">
+                    <label for="sel1">Select One:</label>
+                    <select class="form-control" id="sel1" name="question_10">
+                      <option>{{question_list_set10.question_10.option_1}}</option>
+                      <option>{{question_list_set10.question_10.option_2}}</option>
+                      <option>{{question_list_set10.question_10.option_3}}</option>
+                      <option>{{question_list_set10.question_10.option_4}}</option>
+                    </select>
+                    <br>
+                </div>
+    
+            </div>            
+
+            
+     
+    
+          
+
+        <br>
+        <button class="btn btn-success" type="submit">Submit</button>
+        </form>
+
+</div>
+{% else %}
+<br>
+<div class=" container alert alert-warning">
+    <strong>Hmm !</strong> 
+    <h2>It seems there is no any quizs for you right now !</h2>
+  </div>
+
+{% endif %}
+
+
+{% endblock body %}

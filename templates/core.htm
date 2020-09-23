@@ -1,0 +1,18 @@
+{% extends 'base_internal.htm' %}
+
+{% block title %} Core {% endblock title %}
+
+
+
+{% block body %}
+
+{% if user.is_authenticated %}
+
+Hi {{ user.email }}!
+
+{% endif %}
+
+
+
+
+{% endblock body %}

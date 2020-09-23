@@ -1,0 +1,51 @@
+{% extends 'base_internal.htm' %}
+{% load static %}
+{% block title %} Profile {% endblock title %}
+
+
+{% block body %}
+
+
+<div class="container">
+
+    <div class=" mx-auto  m-5 pb-5 shadow-lg p-4 mb-4 bg-white" >
+
+        <div class="float-left">
+            <img class="card-img-top rounded-circle img-fluid" src="{% static '/images/avatar.png' %}" alt="Card image" style="width:100px">
+    
+        </div>
+    
+
+        
+        <div class="card mx-auto">
+            <div class="card-body float-right ">
+              <h4 class="card-title">Hi : {{user.username}}</h4>
+                <p>Email :  {{ user.email }}</p>          
+              <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#demo">View score </button>
+                    <br>
+              <div id="demo" class="collapse">
+                <br>
+                <div class="card bg-light text-dark">
+                  {% if user_scores.score != 0 %}
+                    
+                    {% for each in user_scores %}
+
+                    <div class="card-body">
+                      <h2>Quiz : {{ each.quiz}}</h2>
+                      <h3>Score  : {{ each.score}} / {{each.max_score}}</h3>      
+                    </div>
+
+                    {% endfor %}
+
+                    {% endif %}
+                  </div>
+    
+              </div>
+    
+            </div>
+          </div>
+    </div>
+</div>
+
+
+{% endblock body %}

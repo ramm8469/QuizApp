@@ -1,0 +1,67 @@
+{% extends 'base_internal.htm' %}
+
+{% block title %} QuizList {% endblock title %}
+
+
+
+{% block body %}
+
+<br>
+<div class="container">
+
+  <div class="card bg-light">
+    <div class="card-body text-center">
+      <p class="card-text">Set-5-Quizs</p>
+
+      {% for each in question_set5_instances %}
+      {% with set_type=5 %}
+      <div class="container">
+          <div class="card-columns">
+             <div class="card bg-light">
+               <div class="card-body text-center">
+                 <p class="card-text font-weight-bolder">Quiz Name : {{each.name}}</p>
+                 {% url 'QuizInstance'  set_type=5 id=each.id as the_url %}
+                 <a class="nav-link" href="{{the_url}}">Start</a>
+               </div>
+             </div>
+          </div>
+      {% endwith %}
+      {% endfor %}
+      
+
+    </div>
+  </div>
+
+</div>
+
+<hr>
+
+<div class="container">
+
+  <div class="card bg-light">
+    <div class="card-body text-center">
+      <p class="card-text">Set-10-Quizs</p>
+
+      {% for each in question_set10_instances %}
+      {% url 'QuizInstance'  set_type=10 id=each.id as the_url %}
+      <div class="container">
+          <div class="card-columns">
+             <div class="card bg-light">
+               <div class="card-body text-center">
+                 <p class="card-text font-weight-bolder">Quiz Name : {{each.name}}</p>
+                 <a class="nav-link" href="{{the_url}}">Start</a>
+               </div>
+             </div>
+          </div>
+      
+      {% endfor %}
+      
+
+    </div>
+  </div>
+
+</div>
+
+
+
+{% endblock body %}
